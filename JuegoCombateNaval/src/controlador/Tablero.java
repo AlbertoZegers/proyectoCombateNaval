@@ -6,4 +6,12 @@ public class Tablero {
     public Tablero() {
         this.tablero = new ArrayList<>();
     }
+    
+    public void agregarBarco(Barco barco){
+        this.tablero.add(barco);
+    }
+    
+    public void modificarBarco(){
+        
+    }
 }

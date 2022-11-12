@@ -11,7 +11,7 @@ public class Tablero {
         this.tablero.add(barco);
     }
     
-    public void modificarBarco(){
-        
+    public void modificarBarco(int index,Barco barco){
+        this.tablero.set(index, barco);
     }
 }

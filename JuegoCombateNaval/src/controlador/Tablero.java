@@ -14,4 +14,8 @@ public class Tablero {
     public void modificarBarco(int index,Barco barco){
         this.tablero.set(index, barco);
     }
+    public char conseguirBarco(int posicion) {
+        char letra=this.tablero.get(posicion).getTipo();
+        return letra;
+    }
 }

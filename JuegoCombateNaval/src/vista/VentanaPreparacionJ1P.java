@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package vista;
-
+import controlador.Tablero;
+import modelo.Barco;
+import java.util.Random;
 /**
  *
  * @author User
@@ -13,8 +15,19 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPreparacionJ1P
      */
+    Barco barco0=new Barco();
+    Barco barco1=new Barco("Barco", 'B');
+    Tablero tableroJ=new Tablero();
+    Tablero tableroIA=new Tablero();
+    int contador=0;
     public VentanaPreparacionJ1P() {
         initComponents();
+        for (int i = 0; i < 10; i++) {
+            tableroJ.agregarBarco(barco0);
+        } 
+        for (int i = 0; i < 10; i++) {
+            tableroIA.agregarBarco(barco0);
+        }
     }
 
     /**
@@ -52,10 +65,43 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        botonBonbardear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        textoC0.setText("A");
+
+        textoC1.setText("A");
+        textoC1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoC1ActionPerformed(evt);
+            }
+        });
+
+        textoC2.setText("A");
+
+        textoC3.setText("A");
+
+        textoC4.setText("A");
+
+        textoC5.setText("A");
+
+        textoC6.setText("A");
+
+        textoC7.setText("A");
+
+        textoC8.setText("A");
+
+        textoC9.setText("A");
+
+        textoBarcosColocados.setText("0");
+
         botonColocar.setText("COLOCAR");
+        botonColocar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonColocarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Campo1");
 
@@ -77,74 +123,74 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
 
         jLabel10.setText("Campo10");
 
-        jLabel11.setText("N° del barco");
+        jLabel11.setText("N° del campo");
 
         jLabel12.setText("Barcos colocados");
+
+        botonBonbardear.setText("BOMBARDEAR");
+        botonBonbardear.setEnabled(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(145, 145, 145)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
                         .addComponent(jLabel1)
                         .addGap(27, 27, 27)
                         .addComponent(jLabel2)
                         .addGap(28, 28, 28)
                         .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
+                        .addGap(6, 6, 6)
                         .addComponent(jLabel4)
                         .addGap(31, 31, 31)
                         .addComponent(jLabel5))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel6)
-                            .addComponent(textoC0, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(textoC1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textoC2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textoC3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textoC4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7)
-                                .addGap(27, 27, 27)
-                                .addComponent(jLabel8)
-                                .addGap(26, 26, 26)
-                                .addComponent(jLabel9)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel10))))
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel8)
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel9)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel11)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textoC5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textoC6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel12))
+                        .addComponent(textoC0, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(textoC1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(textoC2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(textoC3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(textoC4, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textoC5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(textoC6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(textoC7, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addComponent(textoC8, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(textoC9, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel12)
+                        .addGap(6, 6, 6)
+                        .addComponent(textoBarcosColocados, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonBonbardear)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textoBarcoColocado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botonColocar))
-                            .addComponent(textoBarcosColocados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(textoC7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textoC8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(textoC9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(157, Short.MAX_VALUE))
+                                .addComponent(textoBarcoColocado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20)
+                                .addComponent(botonColocar)))))
+                .addContainerGap(247, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,7 +232,9 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                     .addComponent(textoBarcoColocado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonColocar)
                     .addComponent(jLabel11))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonBonbardear)
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -202,6 +250,217 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void textoC1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoC1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoC1ActionPerformed
+
+    private void botonColocarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonColocarActionPerformed
+        // TODO add your handling code here:
+        int posBarco = Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1;
+        if (posBarco == 0) {
+            this.textoC0.setText("B");
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 1) {
+            this.textoC1.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 2) {
+            this.textoC2.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 3) {
+            this.textoC3.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 4) {
+            this.textoC4.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 5) {
+            this.textoC5.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 6) {
+            this.textoC6.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 7) {
+            this.textoC7.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 8) {
+            this.textoC8.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else if (posBarco == 9) {
+            this.textoC9.setText("B");
+            contador = contador + 1;
+            this.textoBarcosColocados.setText(String.valueOf(contador));
+            if (contador < 3) {
+                tableroJ.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco1);
+                this.textoBarcoColocado.setText("");
+            } else {
+                this.textoBarcoColocado.setText("");
+                this.botonColocar.setVisible(false);
+                this.botonBonbardear.setEnabled(true);
+                for (int i = 0; i < 3; i++) {
+                    int intAleatorio = (int) (Math.random() * 9);
+                    while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
+                        intAleatorio = (int) (Math.random() * 9);
+                    }
+                    tableroIA.modificarBarco(intAleatorio, barco1);
+                    System.out.println(intAleatorio);
+                }
+            }
+        } else {
+            System.out.println("Error numero fuera de rango");
+        }
+    }//GEN-LAST:event_botonColocarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,6 +498,7 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonBonbardear;
     private javax.swing.JButton botonColocar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

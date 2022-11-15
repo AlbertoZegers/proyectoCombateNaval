@@ -83,17 +83,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void botonPlay1PActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPlay1PActionPerformed
         // TODO add your handling code here:
-        Barco barco0=new Barco();
-        Barco barco1=new Barco("Barco", 'B');
-        Tablero tableroJ=new Tablero();
-        for (int i = 0; i < 10; i++) {
-            tableroJ.agregarBarco(barco0);
-        }
-        Tablero tableroIA=new Tablero();
-        for (int i = 0; i < 10; i++) {
-            tableroIA.agregarBarco(barco0);
-        }
         new VentanaPreparacionJ1P().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botonPlay1PActionPerformed
 
     /**

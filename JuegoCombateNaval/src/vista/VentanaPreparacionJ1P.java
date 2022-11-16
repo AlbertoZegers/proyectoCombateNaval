@@ -4,8 +4,10 @@
  */
 package vista;
 import controlador.Tablero;
+import controlador.MemoriaIA;
 import modelo.Barco;
 import java.util.Random;
+//import java.util.ArrayList;
 /**
  *
  * @author User
@@ -19,6 +21,8 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
     Barco barco1=new Barco("Barco", 'B');
     Tablero tableroJ=new Tablero();
     Tablero tableroIA=new Tablero();
+    MemoriaIA memoriaIA=new MemoriaIA();
+    //ArrayList<Integer> memoriaIA = new ArrayList<>();
     int contador=0;
     public VentanaPreparacionJ1P() {
         initComponents();
@@ -129,6 +133,11 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
 
         botonBonbardear.setText("BOMBARDEAR");
         botonBonbardear.setEnabled(false);
+        botonBonbardear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBonbardearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -266,8 +275,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -286,8 +297,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -306,8 +319,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -326,8 +341,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -346,8 +363,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -366,8 +385,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -386,8 +407,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -406,8 +429,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -426,8 +451,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -446,8 +473,10 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
                 this.textoBarcoColocado.setText("");
             } else {
                 this.textoBarcoColocado.setText("");
+                this.textoBarcosColocados.setText("");
                 this.botonColocar.setVisible(false);
                 this.botonBonbardear.setEnabled(true);
+                this.jLabel12.setText("Posición bombardeada");
                 for (int i = 0; i < 3; i++) {
                     int intAleatorio = (int) (Math.random() * 9);
                     while (tableroIA.conseguirBarco(intAleatorio) == 'B') {
@@ -461,6 +490,77 @@ public class VentanaPreparacionJ1P extends javax.swing.JFrame {
             System.out.println("Error numero fuera de rango");
         }
     }//GEN-LAST:event_botonColocarActionPerformed
+
+    private void botonBonbardearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBonbardearActionPerformed
+        // TODO add your handling code here:
+        tableroIA.modificarBarco(Integer.parseInt(this.textoBarcoColocado.getText().trim()) - 1, barco0);
+        this.textoBarcoColocado.setText("");
+        int intAleatorio = (int) (Math.random() * 9);
+        //2da Solucion usando la clase memoria :(
+        while (memoriaIA.validarNumero(intAleatorio)==true) {
+            intAleatorio = (int) (Math.random() * 9);
+        }
+        memoriaIA.agregarNumero(intAleatorio);
+        //Solucion "" al menos fuca pero aun asi repite numeros
+//        while (tableroJ.indexarObjeto(tableroJ.consegirObjeto(intAleatorio))==intAleatorio) {
+//            intAleatorio = (int) (Math.random() * 9);
+//        }
+        //1ra Solucion usando la Clase memoria IA :(
+//        memoriaIA.agregarNumero(intAleatorio);
+//        contador=(contador)+1;
+//        while (memoriaIA.conseguirNumero(contador-1)==intAleatorio) {
+//            intAleatorio = (int) (Math.random() * 9);
+//        }
+        System.out.println(intAleatorio);
+        if (intAleatorio == 0) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("1");
+        } else if (intAleatorio == 1) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("2");
+        } else if (intAleatorio == 2) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("3");
+        } else if (intAleatorio == 3) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("4");
+        } else if (intAleatorio == 4) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("5");
+        } else if (intAleatorio == 5) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("6");
+        } else if (intAleatorio == 6) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("7");
+        } else if (intAleatorio == 7) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("8");
+        } else if (intAleatorio == 8) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("9");
+        } else if (intAleatorio == 9) {
+            this.textoC0.setText("A");
+            tableroJ.modificarBarco(intAleatorio, barco1);
+            this.textoBarcosColocados.setText("10");
+        }
+        if (tableroJ.validarVictoria() == true & tableroJ.validarVictoria() == true) {
+            System.out.println("Empate");
+        } else if (tableroJ.validarVictoria() == true) {
+            System.out.println("Derrota");
+        } else if (tableroIA.validarVictoria() == true) {
+            System.out.println("Victoria");
+        }
+    }//GEN-LAST:event_botonBonbardearActionPerformed
 
     /**
      * @param args the command line arguments

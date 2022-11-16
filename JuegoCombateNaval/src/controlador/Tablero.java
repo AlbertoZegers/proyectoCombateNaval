@@ -18,4 +18,22 @@ public class Tablero {
         char letra=this.tablero.get(posicion).getTipo();
         return letra;
     }
+    public Object consegirObjeto(int posicion) {
+        Object objeto = this.tablero.get(posicion);
+        return objeto;
+    }
+    public int indexarObjeto(Object objeto) {
+        int posicion = this.tablero.indexOf(objeto);
+        return posicion;
+    }
+    public boolean validarVictoria() {
+        boolean validador = true;
+        for (Barco barco : tablero) {
+            char letra = barco.getTipo();
+            if (letra == 'B') {
+                validador = false;
+            }
+        }
+        return validador;
+    }
 }

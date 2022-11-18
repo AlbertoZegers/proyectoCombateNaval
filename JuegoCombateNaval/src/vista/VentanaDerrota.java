@@ -35,6 +35,7 @@ public class VentanaDerrota extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         botonGrabar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        botonSaltar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,6 +54,13 @@ public class VentanaDerrota extends javax.swing.JFrame {
 
         jLabel4.setText("DERROTA!");
 
+        botonSaltar.setText("SALTAR");
+        botonSaltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSaltarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -65,6 +73,7 @@ public class VentanaDerrota extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(botonSaltar)
                     .addComponent(botonGrabar)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -93,7 +102,9 @@ public class VentanaDerrota extends javax.swing.JFrame {
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addComponent(botonGrabar)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonSaltar)
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,6 +130,12 @@ public class VentanaDerrota extends javax.swing.JFrame {
         this.setVisible(false);
         new VentanaPrincipal().setVisible(true);
     }//GEN-LAST:event_botonGrabarActionPerformed
+
+    private void botonSaltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSaltarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new VentanaPrincipal().setVisible(true);
+    }//GEN-LAST:event_botonSaltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,6 +174,7 @@ public class VentanaDerrota extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonGrabar;
+    private javax.swing.JButton botonSaltar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

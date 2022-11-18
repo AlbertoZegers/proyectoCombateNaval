@@ -55,6 +55,7 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="botonSaltar" min="-2" max="-2" attributes="0"/>
                       <Component id="botonGrabar" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
@@ -91,7 +92,9 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="botonGrabar" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="90" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="botonSaltar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -130,6 +133,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="VICTORIA!"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="botonSaltar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SALTAR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonSaltarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

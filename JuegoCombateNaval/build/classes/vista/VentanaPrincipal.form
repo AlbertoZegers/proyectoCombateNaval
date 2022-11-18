@@ -4,15 +4,39 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenu1">
+        <Menu class="javax.swing.JMenu" name="menuBuscarJugador">
           <Properties>
             <Property name="text" type="java.lang.String" value="RegistroJugador"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="BuscarPorID"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuBorrarJugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="BorrarPorID"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
             <Property name="text" type="java.lang.String" value="RegistroIA"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="menuBuscarIA">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mostrar Historico"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="menuBorrarIA">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="BorrarRegistro"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

@@ -158,7 +158,7 @@ public class VentanaDerrota extends javax.swing.JFrame {
             Computador com = new Computador();
             com.setEstado("D");
             Jugador jug=new RegistroJugadores().buscarPorId(id);
-            new RegistroJugadores().modificarJugadorV(jug);
+            new RegistroJugadores().modificarJugadorD(jug);
             if (new RegistroComputador().agregarResultado(com)) {
                 this.mensaje("GRABO RESULTADO!!!");
             } else {

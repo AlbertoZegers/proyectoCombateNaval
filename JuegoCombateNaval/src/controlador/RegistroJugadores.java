@@ -136,9 +136,7 @@ public class RegistroJugadores {
     public boolean modificarJugadorD(Jugador jug){
         try {
             Connection conexion= Conexion.getConexion();
-            String query="UPDATE JUGADOR SET victorias=?,"
-                    + "derrotas=?, partidas=?,"
-                    + " WHERE id=?";
+            String query="UPDATE JUGADOR SET victorias=?, derrotas=?, partidas=? WHERE id=?";
             PreparedStatement mod=
                     conexion.prepareStatement(query);
             mod.setInt(1, jug.getCantidadVictorias());
